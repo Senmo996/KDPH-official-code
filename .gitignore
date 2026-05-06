@@ -1,0 +1,17 @@
+# Python cache
+__pycache__/
+
+# Training outputs
+result/
+logs/
+
+# Data and models (download separately)
+data_clip/
+ViT-B-32.pt
+
+# wandb
+wandb/
+
+# Misc
+*.pid
+*.pth

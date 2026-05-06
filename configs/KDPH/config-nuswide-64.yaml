@@ -1,0 +1,71 @@
+model:
+  arch: KDPH
+  model_type: base
+  clip_path: ./ViT-B-32.pt
+  
+
+  alpha: 2
+  lambda_cm: 0.9
+  base_margin: 1
+  noise: 0.75
+  hypseed: 0
+  # coco: 80, mirflickr: 24, nuswide: 21
+  numclass: 21
+  hash_func: tanh
+
+  ###### >>>>>>>> SET POINTS <<<<<<<<<
+
+optimizer:
+  arch: BertAdam
+
+  lr: 0.0001
+  clip_lr: 0.000002
+  warmup_proportion: 0.05
+  schedule: warmup_cosine
+  b1: 0.9
+  b2: 0.98
+  e: 0.000001
+  max_grad_norm: 1.0
+  weight_decay: 0.02
+
+  hyp:
+    lr: 0.00001
+    momentum: 0.9
+    weight_decay: 0.0005
+
+dataset:
+  arch: transformer_dataset
+  tokenizer_arch: clip_tokenizer
+
+  path: data_clip/baidu-clip-hash-dataset
+  # name: mirflickr
+  name: nuswide
+  txt_file: mat/caption.txt
+  img_file: mat/index.mat
+  label_file: mat/label.mat
+
+  max_word: 77
+  image_resolution: 224
+
+run:
+  arch: KDPHTrainer
+
+  save_dir: ./result/KDPH/nuswide/64
+
+  output_dim: 64
+
+  device: 3
+  batch_size: 512
+  num_workers: 8
+  pin_memory: True
+  shuffle: True
+
+  is_train: True
+  train_num: 10000
+  query_num: 5000
+  epochs: 100
+  display_step: 20
+
+  # top_k: 5000
+
+
