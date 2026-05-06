@@ -2,7 +2,7 @@
 
 <div align="center">
 
-**[Paper]** | **[arXiv]**
+**[Paper](./Absorbing%20Gradient%20Conflicts%20Modeling%20Semantic%20Variance%20via%20Kent%20Distributions%20for%20Cross-Modal%20Hashing.pdf)**
 
 *Modeling Semantic Variance via Kent Distributions for Cross-Modal Hashing*
 
@@ -140,15 +140,7 @@ Best models (highest mAP I→T and mAP T→I) are saved as `.pth` checkpoints an
 
 ## Citation
 
-If you find this work useful, please cite our paper:
-
-```bibtex
-@article{kdph2025,
-  title   = {Absorbing Gradient Conflicts: Modeling Semantic Variance via Kent Distributions for Cross-Modal Hashing},
-  author  = {Zhu, Hengjie and others},
-  year    = {2025},
-}
-```
+To be updated upon publication.
 
 ## License
 
